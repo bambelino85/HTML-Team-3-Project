@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panther Survey — Prairie View A&M University</title>
+  <meta name="description" content="Fall registration survey for the PVAMU Department of Engineering.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <p class="eyebrow">Department of Engineering</p>
+      <h1>Panther Survey</h1>
+      <p class="subtitle">Fall 2023 Registration — Prairie View A&amp;M University</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <form id="survey-form" name="panther-survey" method="POST" action="/submit.html" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
+      <input type="hidden" name="form-name" value="panther-survey">
+      <p class="visually-hidden">
+        <label>Don't fill this out if you're human: <input name="bot-field"></label>
+      </p>
+
+      <section class="form-section" aria-labelledby="section-info">
+        <h2 id="section-info">Student information</h2>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="firstName">First name</label>
+            <input type="text" id="firstName" name="firstName" required autocomplete="given-name">
+          </div>
+          <div class="field">
+            <label for="middleInitial">M.I.</label>
+            <input type="text" id="middleInitial" name="middleInitial" maxlength="1">
+          </div>
+          <div class="field">
+            <label for="lastName">Last name</label>
+            <input type="text" id="lastName" name="lastName" required autocomplete="family-name">
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="studentId">Student ID</label>
+            <input type="text" id="studentId" name="studentId" pattern="P?[0-9]{9,10}" placeholder="1234567890" required inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="phoneNumber">Phone number</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10}" placeholder="1234567890" required autocomplete="tel">
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="dob">Date of birth</label>
+            <input type="date" id="dob" name="dob" required>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="gradYear">High school graduation year</label>
+            <input type="number" id="gradYear" name="gradYear" min="1950" max="2023" step="1" required>
+          </div>
+          <div class="field">
+            <label for="collGradYear">Expected college graduation year</label>
+            <input type="number" id="collGradYear" name="collGradYear" min="2023" max="2099" step="1" required>
+          </div>
+        </div>
+      </section>
+
+      <section class="form-section" aria-labelledby="section-survey">
+        <h2 id="section-survey">Survey questions</h2>
+
+        <fieldset class="question">
+          <legend>1. What is your intended major or field of study?</legend>
+          <div class="options">
+            <label class="option"><input type="radio" name="major" value="Chemical Engineering" required> Chemical Engineering</label>
+            <label class="option"><input type="radio" name="major" value="Civil Engineering"> Civil Engineering</label>
+            <label class="option"><input type="radio" name="major" value="Computer Science"> Computer Science</label>
+            <label class="option"><input type="radio" name="major" value="Computer Engineering"> Computer Engineering</label>
+            <label class="option"><input type="radio" name="major" value="Electrical Engineering"> Electrical Engineering</label>
+            <label class="option"><input type="radio" name="major" value="Mechanical Engineering"> Mechanical Engineering</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="question">
+          <legend>2. Did you attend any orientation sessions for new students?</legend>
+          <div class="options options--inline">
+            <label class="option"><input type="radio" name="attendedOrientation" value="Yes" required> Yes</label>
+            <label class="option"><input type="radio" name="attendedOrientation" value="No"> No</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="question">
+          <legend><label for="semesterGoal">3. What is your academic goal or expectation for this semester?</label></legend>
+          <input type="text" id="semesterGoal" name="semesterGoal" required>
+        </fieldset>
+
+        <fieldset class="question">
+          <legend>4. Are you living on-campus or off-campus?</legend>
+          <div class="options options--inline">
+            <label class="option"><input type="radio" name="residence" value="On-Campus" required> On-Campus</label>
+            <label class="option"><input type="radio" name="residence" value="Off-Campus"> Off-Campus</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="question">
+          <legend>5. If living off-campus, what's your commute time to campus?</legend>
+          <div class="options options--inline">
+            <label class="option"><input type="radio" name="commuteTime" value="5 - 10 minutes"> 5–10 min</label>
+            <label class="option"><input type="radio" name="commuteTime" value="11 - 20 minutes"> 11–20 min</label>
+            <label class="option"><input type="radio" name="commuteTime" value="21 - 30 minutes"> 21–30 min</label>
+            <label class="option"><input type="radio" name="commuteTime" value="31 - 40 minutes"> 31–40 min</label>
+            <label class="option"><input type="radio" name="commuteTime" value="41 - 50 minutes"> 41–50 min</label>
+            <label class="option"><input type="radio" name="commuteTime" value="1 hour and over"> 1 hr+</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="question">
+          <legend>6. Are you interested in joining any student clubs or organizations?</legend>
+          <div class="options options--inline">
+            <label class="option"><input type="radio" name="clubInterest" value="Yes" required> Yes</label>
+            <label class="option"><input type="radio" name="clubInterest" value="No"> No</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="question">
+          <legend>7. Did you find the university's orientation program helpful?</legend>
+          <div class="options options--inline">
+            <label class="option"><input type="radio" name="orientationHelpful" value="Very helpful" required> Very helpful</label>
+            <label class="option"><input type="radio" name="orientationHelpful" value="Somewhat helpful"> Somewhat helpful</label>
+            <label class="option"><input type="radio" name="orientationHelpful" value="Not helpful"> Not helpful</label>
+          </div>
+        </fieldset>
+      </section>
+
+      <div class="form-actions">
+        <button type="submit">Submit survey</button>
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Prairie View A&amp;M University · Department of Engineering</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
